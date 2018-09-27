@@ -6,7 +6,8 @@ public class Exam {
      static Scanner sc = new Scanner(System.in);
 
     public Exam (){
-      this.students = new ArrayList<>()  ;
+
+        this.students = new ArrayList<>()  ;
     }
     public  void addStudents(){
         System.out.println("Please the name of the student:");
@@ -52,7 +53,7 @@ public class Exam {
         for(int i=0; i< students.size(); i++){
             Student existingStudent = this.students.get(i);
 
-            System.out.println(existingStudent.getTitle() + " " + existingStudent.getName());
+            System.out.println((i+1)+ "." + existingStudent.getTitle() + " " + existingStudent.getName());
         }
     }
     public static void displayMenu(){
@@ -60,10 +61,23 @@ public class Exam {
         System.out.println("                 Menu                       ");
         System.out.println("1. Enter Students");
         System.out.println("2. Get Grade for specific student");
-        System.out.println("3. Display students");
-        System.out.println("4. Exit");
+        System.out.println("3. Display a student's info");
+        System.out.println("4. Display students");
+        System.out.println("5. Exit");
         System.out.println("============================================");
         System.out.println("Please select from the Menu:");
+    }
+    public void displayStudentInfo(){
+        System.out.println("Please enter the name: ");
+        String name = sc.nextLine();
+        for(int i=0; i< students.size(); i++){
+            Student existingStudent = this.students.get(i);
+            if(existingStudent.getName().equalsIgnoreCase(name)){
+                System.out.println("Name: " + existingStudent.getName() +"\n" + "Title: "+ existingStudent.getTitle()+ "\n"+ "StudentId: "+ existingStudent.getStudentId() + "\n" + "Mark: " + existingStudent.getMark() +  "\n" + "Grade: " + existingStudent.getGrade());
+            return;
+            }
+        }
+        System.out.println("No student is found with this name!");
     }
     public  String calculateGrade(int mark){
         if(mark >= 80){

@@ -18,9 +18,12 @@ public class Main {
                 case 2:  exam.getgrade();
                     break;
                 case 3:
-                    exam.displayStudents();
+                    exam.displayStudentInfo();
                     break;
                 case 4:
+                    exam.displayStudents();
+                    break;
+                case 5:
                     System.exit(0);
 
             }
