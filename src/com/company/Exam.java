@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Exam {
     private  List<Student> students ;
-     static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     public Exam (){
 
@@ -24,13 +24,13 @@ public class Exam {
         String grade = calculateGrade(mark);
 
         Student newStudent = new Student(studentId, name, title, grade, mark);
-         try{
-             students.add(newStudent);
-             System.out.println("you have added a student successfully");
+        try{
+            students.add(newStudent);
+            System.out.println("you have added a student successfully");
 
-         }catch (NullPointerException e){
-             System.out.println("something went wrong");
-         }
+        }catch (NullPointerException e){
+            System.out.println("something went wrong");
+        }
 
 
     }
@@ -74,7 +74,7 @@ public class Exam {
             Student existingStudent = this.students.get(i);
             if(existingStudent.getName().equalsIgnoreCase(name)){
                 System.out.println("Name: " + existingStudent.getName() +"\n" + "Title: "+ existingStudent.getTitle()+ "\n"+ "StudentId: "+ existingStudent.getStudentId() + "\n" + "Mark: " + existingStudent.getMark() +  "\n" + "Grade: " + existingStudent.getGrade());
-            return;
+                return;
             }
         }
         System.out.println("No student is found with this name!");
