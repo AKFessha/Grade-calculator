@@ -10,16 +10,34 @@ public class Exam {
         this.students = new ArrayList<>()  ;
     }
     public  void addStudents(){
+        int studentId = 0;
+        int mark =0;
         System.out.println("Please the name of the student:");
         String name = sc.nextLine();
-        System.out.println("Please enter the studentId:");
-        int studentId = sc.nextInt();
-        sc.nextLine();
+        while(true){
+            try{
+                System.out.println("Please enter the studentId:");
+                studentId = sc.nextInt();
+                break;
+            }
+            catch(NumberFormatException e){
+                System.out.println("The input you entered is wrong, please try again!");
+            }
+        }
+
         System.out.println("Please enter student's title:");
         String title = sc.nextLine();
-        System.out.println("Please enter student's mark:");
-        int mark = sc.nextInt();
-        sc.nextLine();
+        while(true){
+            try{
+                System.out.println("Please enter student's mark:");
+                mark = sc.nextInt();
+                break;
+            }
+            catch(NumberFormatException e){
+                System.out.println("The input you entered is wrong, please try again!");
+            }
+        }
+
 
         String grade = calculateGrade(mark);
 
@@ -35,9 +53,17 @@ public class Exam {
 
     }
     public void getgrade(){
-        System.out.println("please enter the studentId of the student: ");
-        int studentId = sc.nextInt();
-        sc.nextLine();
+        int studentId= 0;
+        while (true){
+            try{
+                System.out.println("please enter the studentId of the student: ");
+                studentId = sc.nextInt();
+                break;
+            }
+            catch(NumberFormatException e){
+                System.out.println("The input you entered is wrong, please try again!");
+            }
+        }
 
         for(int i=0; i< students.size(); i++){
             Student existingStudent = this.students.get(i);
@@ -49,6 +75,7 @@ public class Exam {
         System.out.println("Student with this studentId doesn't exist");
 
     }
+
     public void displayStudents(){
         for(int i=0; i< students.size(); i++){
             Student existingStudent = this.students.get(i);

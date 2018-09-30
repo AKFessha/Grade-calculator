@@ -8,12 +8,18 @@ public class Main {
 
             boolean menuLoop = true;
             while (menuLoop) {
-
+                int choice = 0;
+            while(true) {
                 try {
                     Exam.displayMenu();
-                    int choice = Integer.parseInt(sc.nextLine());
+                    choice = Integer.parseInt(sc.nextLine());
+                    break;
 
-
+                }
+                catch(NumberFormatException e){
+                    System.out.println("The value you entered is invalid, please enter a value between 1 and 5");
+                }
+            }
                 switch (choice) {
                     case 1:
                         exam.addStudents();
@@ -32,13 +38,6 @@ public class Main {
 
                 }
             }
-                catch(NumberFormatException e){
-                    System.out.println("The value you entered is invalid, please enter a value between 1 and 5");
-                }
-                catch(InputMismatchException e){
-                    System.out.println("The value you entered doesn't match, please enter a value between 1 and 5");
-                }
-        }
 
     }
 }
