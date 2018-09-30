@@ -17,7 +17,7 @@ public class Exam {
         while(true){
             try{
                 System.out.println("Please enter the studentId:");
-                studentId = sc.nextInt();
+                studentId = Integer.parseInt(sc.nextLine());
                 break;
             }
             catch(NumberFormatException e){
@@ -30,7 +30,7 @@ public class Exam {
         while(true){
             try{
                 System.out.println("Please enter student's mark:");
-                mark = sc.nextInt();
+                mark = Integer.parseInt(sc.nextLine());
                 break;
             }
             catch(NumberFormatException e){
@@ -57,7 +57,7 @@ public class Exam {
         while (true){
             try{
                 System.out.println("please enter the studentId of the student: ");
-                studentId = sc.nextInt();
+                studentId = Integer.parseInt(sc.nextLine());
                 break;
             }
             catch(NumberFormatException e){
