@@ -8,7 +8,10 @@ public class Main {
 
             boolean menuLoop = true;
             while (menuLoop) {
+
                 int choice = 0;
+
+
             while(true) {
                 try {
                     Exam.displayMenu();

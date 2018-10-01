@@ -9,9 +9,17 @@ public class Exam {
 
         this.students = new ArrayList<>()  ;
     }
+
+
+    Course myCourse = new Course();
+    public void addCourseName(){
+        System.out.println("Please enter the course Name: ");
+        myCourse.setCourseName(sc.nextLine());
+    }
     public  void addStudents(){
         int studentId = 0;
         int mark =0;
+
         System.out.println("Please the name of the student:");
         String name = sc.nextLine();
         while(true){
@@ -68,7 +76,7 @@ public class Exam {
         for(int i=0; i< students.size(); i++){
             Student existingStudent = this.students.get(i);
             if (existingStudent.getStudentId() == studentId){
-                System.out.println("The grade for this specific student is :  " + existingStudent.getGrade());
+                System.out.println("The grade for this specific student for the course:  " + myCourse.getCourseName()+ " is: " + existingStudent.getGrade());
                 return;
             }
         }
