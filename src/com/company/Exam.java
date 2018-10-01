@@ -76,7 +76,7 @@ public class Exam {
         for(int i=0; i< students.size(); i++){
             Student existingStudent = this.students.get(i);
             if (existingStudent.getStudentId() == studentId){
-                System.out.println("The grade for this specific student for the course:  " + myCourse.getCourseName()+ " is: " + existingStudent.getGrade());
+                System.out.println("The grade for this specific student for the course " + myCourse.getCourseName()+ "is: " + existingStudent.getGrade());
                 return;
             }
         }

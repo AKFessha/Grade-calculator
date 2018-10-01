@@ -25,6 +25,7 @@ public class Main {
             }
                 switch (choice) {
                     case 1:
+                        exam.addCourseName();
                         exam.addStudents();
                         break;
                     case 2:
